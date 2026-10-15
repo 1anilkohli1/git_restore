@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Random Big Page</title>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: #f3f6e8;
+      color: #202b27;
+      font: 18px/1.5 Georgia, serif;
+    }
+
+    main {
+      max-width: 34rem;
+      padding: 2rem;
+      border: 2px solid #202b27;
+      background: #fffdf5;
+      box-shadow: 8px 8px 0 #e2a05c;
+    }
+
+    h1 { margin-top: 0; }
+
+    button {
+      padding: 0.7rem 1rem;
+      border: 0;
+      background: #246b5a;
+      color: white;
+      font: inherit;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 id="greeting">A tiny page of randomness</h1>
+    <p id="message">Somewhere, a very small orchestra is rehearsing for a tomato.</p>
+    <button id="shuffle" type="button">Surprise me</button>
+  </main>
+
+  <script>
+    const oddities = [
+      "A sleepy comet just misplaced its favorite sock.",
+      "Three invisible ducks are holding a committee meeting.",
+      "The moon has been promoted to assistant night manager.",
+      "A pocket-sized dragon is learning how to whistle.",
+      "Somewhere, a very small orchestra is rehearsing for a tomato."
+    ];
+
+    document.querySelector("#shuffle").addEventListener("click", () => {
+      const index = Math.floor(Math.random() * oddities.length);
+      document.querySelector("#message").textContent = oddities[index];
+    });
+  </script>
+</body>
+</html>
